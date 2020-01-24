@@ -1,0 +1,75 @@
+Deep learning --> deep means a lot of hidden layers 
+
+input layer  
+hidden layer  
+output layer 
+
+
+Artificial Neural Network 
+
+	Inputs (Each input represent a variable) --> all the inputs combined represents a row from the data set. Input values must be similar to each other --> that means standardize the values! 
+
+	Synapses (the connections) are assigned weights. Neural networks learn by these weights.
+
+	An activation function which takes the weighted sum of all inputs spits out the output 
+
+	Outputs can be binary, categorical, or cl
+
+Activation Function 
+
+	4 types: 
+
+		threshold(x) = 1 if x >= 0 or 0 if x < 0. Here x is the weighted sum of the inputs.
+
+		sigmoid(x) = 1 / (1 + e^-x)
+
+		rectifier(x) = max(0, x)
+
+		hyperbolic tangent or tanh(x) = (1-e^(-2x))/(1+e^(-2x)), -1 <= y <= 1
+
+
+	If output is binary, threshol or sigmoid would work as activation function.
+
+	Each neuron, based on their inputs, contributes differently to the output value 
+
+	Cost function = what is the error you have in your prediction, our goal is to minimize the cost function
+
+
+1. Feed every row into the same neural network to get y_hat values. For every prediction y_hat, there is an actual value y. 
+2. Update the total cost function using y_hats and ys
+3. Update the weights accordingly
+
+
+
+Backpropagation
+	Gradient descent is a method to find the optimal weights by minimizing the cost function involving the predicted and actual values. The error is then backpropagated to update the weights.
+
+	All the weights are updated at the same time in backpropagation. 
+
+	Batch Gradient Descent vs. Stochastic Gradient Descent 
+
+Training the ANN.
+
+Step 1: 
+	Randomly initialize the weights to small numbers close to 0. 
+
+Step 2: 
+	Input the 1st observation of your dataset in the input layer, each feature in one input node.
+
+Step 3: 
+	Forward-propagation; From left to right, the neurons are activated in a way that the impact of each neuron's activation 
+is limited by the weights. Propagate the activations until getting the predicted result y_hat. 
+
+Step 4: 
+	Compare the predicted value to the actual value. Measure the generated error. 
+
+Step 5: 
+	Back-propagation: from right to left, the error is back-propagated. Update the weight according to how much they are responsible 	for the error. The learning rate decides by how much we update the weights.  
+
+Step 6: 
+
+	Repeat steps 1-5: Update the weights after each observation (Reinforcement-learning)
+	Repeat steps 1-5: Update the weights after a batch of observations (Batch-learning)
+
+Step 7: 
+	When whole training set passes through the network, that makes it an epoch. 
